@@ -9,13 +9,3 @@ class AIRInfo:
         self.name = name
 
     __init__.__defaults__ = tuple(None for name in __init__.__code__.co_varnames)
-
-# class AIRInfo:
-    
-#     @property
-#     def description(self):
-#         return self._description
-    
-#     @description.setter
-#     def description(self, description):
-#         self._description = description
