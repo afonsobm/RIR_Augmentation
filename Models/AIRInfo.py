@@ -1,41 +1,41 @@
+import numpy as np
+
 class AIRInfo:
-    angle: str
-    azimuth_angle: str
-    cal_plate: str
+    angle: int
+    azimuth_angle: int
+    cal_plate: int
     channel: int
-    contact: str
-    contact_pressure: str
-    d_height: str
-    d_mic_mic: str
-    d_speaker_mic: str
+    contact_pressure: int
+    d_height: float
+    d_mic_mic: float
+    d_speaker_mic: float
     description: str
-    distance: int
-    erp_dist: str
+    distance: float
+    erp_dist: float
     excitation: str
     filename: str
     fs: int
     head: int
-    hhp_xyz: str
-    mic_height: str
+    hhp_xyz: np.ndarray
+    mic_height: float
     microphone: str
     misc: str
     mock_up_type: str
-    mrp_height: str
+    mrp_height: float
     phone_pos: str
-    pinna: str
+    pinna: float
     precision: str
     rir_method: str
     rir_type: str
     room: str
-    torso: str
+    torso: int
     version: str
 
-    def __init__(self, angle: str, azimuth_angle: str, cal_plate: str, channel: int, contact: str, contact_pressure: str, copyright: str, d_height: str, d_mic_mic: str, d_speaker_mic: str, description: str, distance: int, erp_dist: str, excitation: str, filename: str, fs: int, head: int, hhp_xyz: str, mic_height: str, microphone: str, misc: str, mock_up_type: str, mrp_height: str, phone_pos: str, pinna: str, precision: str, rir_method: str, rir_type: str, room: str, torso: str, version: str) -> None:
+    def __init__(self, angle: int, azimuth_angle: int, cal_plate: int, channel: int, contact_pressure: int, d_height: float, d_mic_mic: float, d_speaker_mic: float, description: str, distance: float, erp_dist: float, excitation: str, filename: str, fs: int, head: int, hhp_xyz: np.ndarray, mic_height: float, microphone: str, misc: str, mock_up_type: str, mrp_height: float, phone_pos: str, pinna: float, precision: str, rir_method: str, rir_type: str, room: str, torso: int, version: str) -> None :
         self.angle = angle
         self.azimuth_angle = azimuth_angle
         self.cal_plate = cal_plate
         self.channel = channel
-        self.contact = contact
         self.contact_pressure = contact_pressure
         self.d_height = d_height
         self.d_mic_mic = d_mic_mic
@@ -62,4 +62,4 @@ class AIRInfo:
         self.torso = torso
         self.version = version
 
-        __init__.__defaults__ = tuple(None for name in __init__.__code__.co_varnames)
+    __init__.__defaults__ = tuple(None for name in __init__.__code__.co_varnames)
