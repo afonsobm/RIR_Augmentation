@@ -1,3 +1,12 @@
 {
-    "python.pythonPath": "C:\\Users\\Bruno\\anaconda3\\python.exe"
+    "python.pythonPath": "/home/bruno/miniconda3/envs/air/bin/python",
+    "files.exclude": {
+        "**/*.pyc": {"when": "$(basename).py"}, 
+        "**/__pycache__": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true
+    }
 }
