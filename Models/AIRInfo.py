@@ -62,4 +62,4 @@ class AIRInfo:
         self.torso = torso
         self.version = version
 
-    __init__.__defaults__ = tuple(None for name in __init__.__code__.co_varnames)
+    __init__.__defaults__ = tuple(None for name in __init__.__code__.co_varnames) 
