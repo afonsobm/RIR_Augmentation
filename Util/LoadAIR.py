@@ -9,9 +9,9 @@ from Models.AIRInfo import AIRInfo
 airLibPath = os.path.normpath(os.getenv("AIR_LIB_PATH"))
 
 
-def load_air(fileName: str) -> AIR:
+def load_air(file_name: str) -> AIR:
     
-    air_file = loadmat(os.path.join(airLibPath, fileName))
+    air_file = loadmat(os.path.join(airLibPath, file_name))
     air_file_info = air_file.get("air_info")
 
     info_values = air_file_info[0,0]
