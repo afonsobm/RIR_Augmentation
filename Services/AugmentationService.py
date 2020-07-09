@@ -1,9 +1,11 @@
+import math as m
 import numpy as np
-from Constants.AIRContants import DELAY_THRESHOLD, TOLERANCE_WINDOW
+
 from Models.AIR import AIR
 from Models.AIRInfo import AIRInfo
 from Util.IRUtil import earlyResponseIR, lateResponseIR
-import math as m
+from Constants.AIRContants import AIRConstants
+
 
 def augmentAIR():
     raise NotImplementedError
@@ -14,8 +16,8 @@ def calculateDRR(air: AIR):
     drr: float
 
     # Retrieving early/late responses
-    earlyIR = earlyResponseIR(air.data, air.airInfo.fs, DELAY_THRESHOLD, TOLERANCE_WINDOW)
-    lateIR = lateResponseIR(air.data, air.airInfo.fs, DELAY_THRESHOLD, TOLERANCE_WINDOW)
+    earlyIR = earlyResponseIR(air.data, air.airInfo.fs, AIRConstants.DELAY_THRESHOLD, AIRConstants.TOLERANCE_WINDOW)
+    lateIR = lateResponseIR(air.data, air.airInfo.fs, AIRConstants.DELAY_THRESHOLD, AIRConstants.TOLERANCE_WINDOW)
 
     # Calculating DRR
     drr = 10 * m.log10( np.sum(np.square(earlyIR))[0] / float(np.sum(np.square(lateIR))[0]) )

@@ -32,6 +32,7 @@ class AIRInfo:
     __version: str
 
     def __init__(self, angle: int, azimuth_angle: int, cal_plate: int, channel: int, contact_pressure: int, d_height: float, d_mic_mic: float, d_speaker_mic: float, description: str, distance: float, erp_dist: float, excitation: str, filename: str, fs: int, head: int, hhp_xyz: np.ndarray, mic_height: float, microphone: str, misc: str, mock_up_type: str, mrp_height: float, phone_pos: str, pinna: float, precision: str, rir_method: str, rir_type: str, room: str, torso: int, version: str) -> None:
+        super().__init__()
         self.__angle = angle
         self.__azimuth_angle = azimuth_angle
         self.__cal_plate = cal_plate

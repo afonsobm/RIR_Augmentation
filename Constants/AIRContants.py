@@ -1,21 +1,20 @@
 import sys
 
+class classproperty(object):
+    def __init__(self, f):
+        self.f = f
+    def __get__(self, obj, owner):
+        return self.f(owner)
+
 class AIRConstants:
-    class ConstError(TypeError): pass
-    def __setattr__(self,name,value):
-        if self.__dict__.has_key(name):
-            raise "Can't rebind constant(%s)"%name
-        self.__dict__[name]=value
 
-sys.modules[__name__] = AIRConstants()
+    # defines the intensity of the impulse response which will represent when the audio reached the microfone in the recording
+    DELAY_THRESHOLD: float = 0.0001
 
-RIR_TYPE = dict([
-    (1, "binaural"),
-    (2, "dual-channel")
-])
+    # [miliseconds] defines the size of the tolerance window that will be used to retrieve the early/late impulse responses
+    TOLERANCE_WINDOW: float = 2.5
 
-# defines the intensity of the impulse response which will represent when the audio reached the microfone in the recording
-DELAY_THRESHOLD = 0.001
+    def __init__(self):
+        pass
 
-# [miliseconds] defines the size of the tolerance window that will be used to retrieve the early/late impulse responses
-TOLERANCE_WINDOW = 2.5
+    __init__.__defaults__ = tuple(None for name in __init__.__code__.co_varnames)

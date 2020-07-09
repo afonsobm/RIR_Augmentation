@@ -5,6 +5,7 @@ from scipy.io.matlab import loadmat
 
 from Models.AIR import AIR
 from Models.AIRInfo import AIRInfo
+from Services.AugmentationService import calculateDRR
 from Util.LoadAIR import load_air
 
 if __name__ == "__main__" :
@@ -13,4 +14,5 @@ if __name__ == "__main__" :
         
         fileName = fileName.rstrip()
         airFile = load_air(fileName)
+        calculateDRR(airFile)
         pass
