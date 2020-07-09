@@ -12,6 +12,5 @@ if __name__ == "__main__" :
     for fileName in open('load_air_files.txt', 'r'):
         
         fileName = fileName.rstrip()
-        print(fileName)
         airFile = load_air(fileName)
         pass
