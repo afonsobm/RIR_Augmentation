@@ -5,7 +5,7 @@ def earlyResponseIR(ir_data: np.ndarray, fs: int, threshold: float, tolerance: f
 
     earlyResponseData = ir_data.copy()
     sampleWindowSize = m.ceil((fs * tolerance)/float(1000))
-    delaySize = np.argmax(ir_data > threshold)[0]
+    delaySize = np.argmax(ir_data > threshold)
 
     earlyResponseData[0:(delaySize - sampleWindowSize)] = 0
     earlyResponseData[(delaySize + sampleWindowSize):] = 0
@@ -17,7 +17,7 @@ def lateResponseIR(ir_data: np.ndarray, fs: int, threshold: float, tolerance: fl
 
     lateResponseData = ir_data.copy()
     sampleWindowSize = m.ceil((fs * tolerance)/float(1000))
-    delaySize = np.argmax(ir_data > threshold)[0]
+    delaySize = np.argmax(ir_data > threshold)
 
     lateResponseData[(delaySize - sampleWindowSize):(delaySize + sampleWindowSize)] = 0
 

@@ -20,8 +20,8 @@ def calculateDRR(air: AIR):
     lateIR = lateResponseIR(air.data, air.airInfo.fs, AIRConstants.DELAY_THRESHOLD, AIRConstants.TOLERANCE_WINDOW)
 
     # Calculating DRR
-    drr = 10 * m.log10( np.sum(np.square(earlyIR))[0] / float(np.sum(np.square(lateIR))[0]) )
-
+    drr = 10 * m.log10( np.sum(np.square(earlyIR)) / float(np.sum(np.square(lateIR))) )
+    
     return drr
 
 
