@@ -14,6 +14,9 @@ class AIRConstants:
     # [miliseconds] defines the size of the tolerance window that will be used to retrieve the early/late impulse responses
     TOLERANCE_WINDOW: float = 2.5
 
+    # [miliseconds] defines the size of the Hann Window to calculate the DRR Alpha
+    HANN_WINDOW_SIZE: float = 5
+
     def __init__(self):
         pass
 
